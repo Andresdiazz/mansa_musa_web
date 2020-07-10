@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
+import 'package:mansamusa_web/Classes/Bachillerato/HomePageBa.dart';
+import 'package:mansamusa_web/SelectionPage.dart';
 import 'package:mansamusa_web/Users/bloc/bloc_user.dart';
 import 'package:mansamusa_web/Users/ui/widgets/login_form.dart';
-import 'package:mansamusa_web/home.dart';
 
 class LoginScreen extends StatelessWidget {
   UserBloc userBloc;
@@ -20,7 +21,13 @@ class LoginScreen extends StatelessWidget {
         if (!snapshot.hasData) {
           return login(context);
         } else {
-          return HomePage();
+          return 
+          SelectionPage(
+            colorAppBar: Color(0xff002E62),
+            colorBackground: Color(0xff002E62),
+            logo: AssetImage("images/logowhite.png"),
+            color: Colors.white,
+          );
         }
       },
     );

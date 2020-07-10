@@ -1,8 +1,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
+import 'package:mansamusa_web/Classes/Bachillerato/HomePageBa.dart';
+import 'package:mansamusa_web/SelectionPage.dart';
 import 'package:mansamusa_web/Users/bloc/bloc_user.dart';
-import 'package:mansamusa_web/home.dart';
 
 import 'Users/ui/screens/login_screen.dart';
 
@@ -26,7 +27,15 @@ class MyApp extends StatelessWidget {
         ),
         home: LoginScreen(),
         routes: <String, WidgetBuilder>{
-          '/home': (BuildContext context) => new HomePage()
+          '/home': (BuildContext context) => new SelectionPage(
+            colorAppBar: Color(0xff002E62),
+            colorBackground: Color(0xff002E62),
+            logo: AssetImage("images/logowhite.png"),
+            color: Colors.white,
+          ),
+          //'/HomePagePreescolar' : (BuildContext context) => new NavigationBarPreescolar(),
+          //'/HomePagePrimaria' : (BuildContext context) => new NavigationBarPrimaria(),
+          '/HomePageBachillerato' : (BuildContext context) => HomePageBachillerato(),
 
         },
       ),

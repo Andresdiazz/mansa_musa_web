@@ -258,8 +258,8 @@ class _LoginFormState extends State<LoginForm> {
                 name: user.displayName
             ));
           });
-          Navigator.of(context).pop(context);
-          Navigator.of(context).pushReplacementNamed('/home');
+          //Navigator.of(context).pop(context);
+          //Navigator.of(context).pushReplacementNamed('/home');
           return user != null;
         }catch (e){
           setState(() {
