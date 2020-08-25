@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
+import 'package:mansamusa_web/Classes/Bachillerato/components/Banner.dart';
+import 'package:mansamusa_web/Classes/Bachillerato/components/BannerInteres.dart';
+import 'package:mansamusa_web/Classes/Bachillerato/components/BannerJugando.dart';
 import 'package:mansamusa_web/Classes/Bachillerato/components/ContentScrollInteres.dart';
 import 'package:mansamusa_web/Classes/Bachillerato/components/ContentScrollJugando.dart';
 import 'package:mansamusa_web/Classes/Bachillerato/components/ContentScrollTematico.dart';
 import 'package:mansamusa_web/Users/bloc/bloc_user.dart';
-import 'package:mansamusa_web/Users/ui/screens/login_screen.dart';
+import 'package:mansamusa_web/mansa_icon_icons.dart';
 
 class HomePageBachillerato extends StatefulWidget {
   @override
@@ -28,8 +31,8 @@ class _HomePageBachilleratoState extends State<HomePageBachillerato> {
         actions: [
           IconButton(
               icon: Icon(
-                Icons.search,
-                size: 28,
+                MansaIcon.search,
+                size: 22,
               ),
               onPressed: () {}),
           Container(
@@ -44,7 +47,12 @@ class _HomePageBachilleratoState extends State<HomePageBachillerato> {
                       end: Alignment.bottomCenter),
                   borderRadius: BorderRadius.circular(50),
                   border: Border.all(width: 2, color: Colors.white)),
-              child: IconButton(icon: Icon(Icons.home), onPressed: () {})),
+              child: IconButton(
+                  icon: Icon(
+                    MansaIcon.home,
+                    size: 25,
+                  ),
+                  onPressed: () {})),
           Container(
               width: 50,
               height: 50,
@@ -57,7 +65,7 @@ class _HomePageBachilleratoState extends State<HomePageBachillerato> {
                       end: Alignment.bottomCenter),
                   borderRadius: BorderRadius.circular(50),
                   border: Border.all(width: 2, color: Colors.white)),
-              child: IconButton(icon: Icon(Icons.chat), onPressed: () {})),
+              child: IconButton(icon: Icon(MansaIcon.chat), onPressed: () {})),
           Container(
               width: 50,
               height: 50,
@@ -70,7 +78,8 @@ class _HomePageBachilleratoState extends State<HomePageBachillerato> {
                       end: Alignment.bottomCenter),
                   borderRadius: BorderRadius.circular(50),
                   border: Border.all(width: 2, color: Colors.white)),
-              child: IconButton(icon: Icon(Icons.face), onPressed: () {})),
+              child:
+                  IconButton(icon: Icon(MansaIcon.perfil), onPressed: () {})),
           IconButton(
               icon: Icon(Icons.exit_to_app),
               onPressed: () {
@@ -81,42 +90,29 @@ class _HomePageBachilleratoState extends State<HomePageBachillerato> {
       body: Container(
         height: double.infinity,
         width: double.infinity,
-        decoration: BoxDecoration(color: Theme.of(context).primaryColor),
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage("images/WALL.jpg"), fit: BoxFit.cover)),
         child: ListView(children: [
-          Container(
-            width: double.infinity,
-            height: 450,
-            decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: NetworkImage(
-                        "https://firebasestorage.googleapis.com/v0/b/mansamusa-339c9.appspot.com/o/eje%20tematico%2FENTRADA-MANSA-MUNSA2.jpg?alt=media&token=8713a1ba-c207-4793-82ed-9d006471a5e5"),
-                    fit: BoxFit.cover)),
+          BannerPage(
+            imageHeight: 450,
+            imageWidth: 1400,
           ),
           ContentScrollEje(
             imageHeight: 220.0,
             imageWidth: 320.0,
           ),
-          Container(
-            width: double.infinity,
-            height: 450,
-            decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: NetworkImage(
-                        "https://firebasestorage.googleapis.com/v0/b/mansamusa-339c9.appspot.com/o/temas%20interes%2FLOS-MOROS.jpg?alt=media&token=069bcebb-d3bc-476a-afba-1bb4d14d6301"),
-                    fit: BoxFit.cover)),
+          BannerInteres(
+            imageHeight: 450,
+            imageWidth: 1400,
           ),
           ContentScrollInteres(
             imageHeight: 220.0,
             imageWidth: 320.0,
           ),
-          Container(
-            width: double.infinity,
-            height: 450,
-            decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: NetworkImage(
-                        "https://firebasestorage.googleapis.com/v0/b/mansamusa-339c9.appspot.com/o/JUEGOS%2FENCUENTRA-EL-PAR.jpg?alt=media&token=30c0b9b2-7920-4189-a392-c55a3a5fed4e"),
-                    fit: BoxFit.cover)),
+          BannerJugando(
+            imageHeight: 450,
+            imageWidth: 1400,
           ),
           ContentScrollJugando(
             imageHeight: 220.0,

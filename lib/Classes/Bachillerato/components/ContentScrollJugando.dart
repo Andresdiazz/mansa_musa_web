@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:mansamusa_web/Classes/Bachillerato/gamePage.dart';
+
+import '../secondPage.dart';
 
 class ContentScrollJugando extends StatelessWidget {
   final double imageHeight;
   final double imageWidth;
 
-  ContentScrollJugando(
-      {this.imageHeight,
-      this.imageWidth,});
+  ContentScrollJugando({
+    this.imageHeight,
+    this.imageWidth,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -41,15 +45,15 @@ class ContentScrollJugando extends StatelessWidget {
                     return InkWell(
                       onTap: () {
                         print(doc.documentID);
-                        /* Navigator.push(context, MaterialPageRoute(
-                    builder: (_) => SecondPage(
-                      id: doc.documentID,
-                            title: doc.data['title'],
-                            subtitle: doc.data['subtitle'],
-                            description: doc.data['description'],
-                            img:doc.data['img'],
-                      )
-                  ));*/
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (_) => GamePage(
+                                      id: doc.data['id'],
+                                      title: doc.data['title'],
+                                      description: doc.data['description'],
+                                      img: doc.data['img'],
+                                    )));
                       },
                       child: Container(
                         margin: EdgeInsets.symmetric(
