@@ -5,6 +5,7 @@ import 'package:mansamusa_web/Games/par/parPage.dart';
 import 'package:mansamusa_web/Games/trivia/quizpage.dart';
 import 'package:mansamusa_web/SelectionPage.dart';
 import 'package:mansamusa_web/Users/bloc/bloc_user.dart';
+import 'package:mansamusa_web/Users/ui/screens/login_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
           accentColor: Color(0xff000914),
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        home: HomePageBachillerato(),
+        home: LoginScreen(),
         routes: <String, WidgetBuilder>{
           '/home': (BuildContext context) => new SelectionPage(
                 colorAppBar: Color(0xff002E62),
