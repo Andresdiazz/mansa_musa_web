@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
           accentColor: Color(0xff000914),
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        home: HomePageBachillerato(),
+        home: LoginScreen(),
         routes: <String, WidgetBuilder>{
           '/home': (BuildContext context) => new SelectionPage(
                 colorAppBar: Color(0xff002E62),
