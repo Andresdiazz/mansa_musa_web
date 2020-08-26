@@ -84,8 +84,8 @@ class _SelectionPageState extends State<SelectionPage> {
                           children: [
                             InkWell(
                               onTap: () {
-                                /*Navigator.of(context).pushReplacementNamed(
-                                    '/HomePagePreescolar');*/
+                                Navigator.pushReplacementNamed(
+                                    context, '/HomePagePreescolar');
                               },
                               child: Container(
                                 width: 250,
@@ -110,8 +110,8 @@ class _SelectionPageState extends State<SelectionPage> {
                           children: [
                             InkWell(
                               onTap: () {
-                                /*Navigator.of(context)
-                                    .pushReplacementNamed('/HomePagePrimaria');*/
+                                Navigator.pushReplacementNamed(
+                                    context, '/HomePagePrimaria');
                               },
                               child: Container(
                                 width: 250,
@@ -134,37 +134,36 @@ class _SelectionPageState extends State<SelectionPage> {
                           ],
                         ),
                         Column(
-                      children: [
-                        InkWell(
-                          onTap: () {
-                            Navigator.of(context)
-                                .pushReplacementNamed('/HomePageBachillerato');
-                          },
-                          child: Container(
-                            width: 250,
-                            height: 250,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(8),
-                                image: DecorationImage(
-                                    image: AssetImage("images/img/KID.png"),
-                                    fit: BoxFit.cover)),
-                          ),
+                          children: [
+                            InkWell(
+                              onTap: () {
+                                Navigator.of(context).pushReplacementNamed(
+                                    '/HomePageBachillerato');
+                              },
+                              child: Container(
+                                width: 250,
+                                height: 250,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(8),
+                                    image: DecorationImage(
+                                        image: AssetImage("images/img/KID.png"),
+                                        fit: BoxFit.cover)),
+                              ),
+                            ),
+                            Text(
+                              "Bachillerato",
+                              style: TextStyle(
+                                  color: widget.color,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold),
+                            )
+                          ],
                         ),
-                        Text(
-                          "Bachillerato",
-                          style: TextStyle(
-                              color: widget.color,
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold),
-                        )
-                      ],
-                    ),
                       ],
                     ),
                     SizedBox(
                       height: 30,
                     ),
-                    
                   ],
                 ),
               ),

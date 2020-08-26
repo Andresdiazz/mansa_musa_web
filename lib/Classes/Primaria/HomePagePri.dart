@@ -10,12 +10,12 @@ import 'package:mansamusa_web/Classes/Bachillerato/searchBachillerato.dart';
 import 'package:mansamusa_web/Users/bloc/bloc_user.dart';
 import 'package:mansamusa_web/mansa_icon_icons.dart';
 
-class HomePageBachillerato extends StatefulWidget {
+class HomePagePrimaria extends StatefulWidget {
   @override
-  _HomePageBachilleratoState createState() => _HomePageBachilleratoState();
+  _HomePagePrimariaState createState() => _HomePagePrimariaState();
 }
 
-class _HomePageBachilleratoState extends State<HomePageBachillerato> {
+class _HomePagePrimariaState extends State<HomePagePrimaria> {
   UserBloc userBloc;
 
   @override
@@ -92,32 +92,37 @@ class _HomePageBachilleratoState extends State<HomePageBachillerato> {
         decoration: BoxDecoration(
             image: DecorationImage(
                 image: AssetImage("images/WALL.jpg"), fit: BoxFit.cover)),
-        child: ListView(children: [
-          BannerPage(
-            imageHeight: 450,
-            imageWidth: MediaQuery.of(context).size.width,
-          ),
-          ContentScrollEje(
-            imageHeight: 220.0,
-            imageWidth: 320.0,
-          ),
-          BannerInteres(
-            imageHeight: 450,
-            imageWidth: MediaQuery.of(context).size.width,
-          ),
-          ContentScrollInteres(
-            imageHeight: 220.0,
-            imageWidth: 320.0,
-          ),
-          BannerJugando(
-            imageHeight: 450,
-            imageWidth: MediaQuery.of(context).size.width,
-          ),
-          ContentScrollJugando(
-            imageHeight: 220.0,
-            imageWidth: 320.0,
-          )
-        ]),
+        child: Stack(
+          children: [
+            Container(color: Colors.white60),
+            ListView(children: [
+              BannerPage(
+                imageHeight: 450,
+                imageWidth: MediaQuery.of(context).size.width,
+              ),
+              ContentScrollEje(
+                imageHeight: 220.0,
+                imageWidth: 320.0,
+              ),
+              BannerInteres(
+                imageHeight: 450,
+                imageWidth: MediaQuery.of(context).size.width,
+              ),
+              ContentScrollInteres(
+                imageHeight: 220.0,
+                imageWidth: 320.0,
+              ),
+              BannerJugando(
+                imageHeight: 450,
+                imageWidth: MediaQuery.of(context).size.width,
+              ),
+              ContentScrollJugando(
+                imageHeight: 220.0,
+                imageWidth: 320.0,
+              )
+            ]),
+          ],
+        ),
       ),
     );
   }

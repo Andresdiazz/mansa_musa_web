@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 import 'package:mansamusa_web/Classes/Bachillerato/HomePageBa.dart';
+import 'package:mansamusa_web/Classes/Preescolar/HomePagePre.dart';
+import 'package:mansamusa_web/Classes/Primaria/HomePagePri.dart';
 import 'package:mansamusa_web/Games/par/parPage.dart';
 import 'package:mansamusa_web/Games/trivia/quizpage.dart';
 import 'package:mansamusa_web/SelectionPage.dart';
@@ -24,7 +26,7 @@ class MyApp extends StatelessWidget {
           accentColor: Color(0xff000914),
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        home: LoginScreen(),
+        home: HomePageBachillerato(),
         routes: <String, WidgetBuilder>{
           '/home': (BuildContext context) => new SelectionPage(
                 colorAppBar: Color(0xff002E62),
@@ -32,8 +34,9 @@ class MyApp extends StatelessWidget {
                 logo: AssetImage("images/logowhite.png"),
                 color: Colors.white,
               ),
-          //'/HomePagePreescolar' : (BuildContext context) => new NavigationBarPreescolar(),
-          //'/HomePagePrimaria' : (BuildContext context) => new NavigationBarPrimaria(),
+          '/HomePagePreescolar': (BuildContext context) =>
+              new HomePagePreescolar(),
+          '/HomePagePrimaria': (BuildContext context) => new HomePagePrimaria(),
           '/HomePageBachillerato': (BuildContext context) =>
               HomePageBachillerato(),
         },

@@ -10,12 +10,12 @@ import 'package:mansamusa_web/Classes/Bachillerato/searchBachillerato.dart';
 import 'package:mansamusa_web/Users/bloc/bloc_user.dart';
 import 'package:mansamusa_web/mansa_icon_icons.dart';
 
-class HomePageBachillerato extends StatefulWidget {
+class HomePagePreescolar extends StatefulWidget {
   @override
-  _HomePageBachilleratoState createState() => _HomePageBachilleratoState();
+  _HomePagePreescolarState createState() => _HomePagePreescolarState();
 }
 
-class _HomePageBachilleratoState extends State<HomePageBachillerato> {
+class _HomePagePreescolarState extends State<HomePagePreescolar> {
   UserBloc userBloc;
 
   @override
@@ -60,7 +60,7 @@ class _HomePageBachilleratoState extends State<HomePageBachillerato> {
                   ),
                   onPressed: () {
                     Navigator.pushReplacementNamed(
-                        context, '/HomePageBachillerato');
+                        context, '/HomePagePreescolar');
                   })),
           Container(
               width: 50,
@@ -91,33 +91,42 @@ class _HomePageBachilleratoState extends State<HomePageBachillerato> {
         width: double.infinity,
         decoration: BoxDecoration(
             image: DecorationImage(
-                image: AssetImage("images/WALL.jpg"), fit: BoxFit.cover)),
-        child: ListView(children: [
-          BannerPage(
-            imageHeight: 450,
-            imageWidth: MediaQuery.of(context).size.width,
-          ),
-          ContentScrollEje(
-            imageHeight: 220.0,
-            imageWidth: 320.0,
-          ),
-          BannerInteres(
-            imageHeight: 450,
-            imageWidth: MediaQuery.of(context).size.width,
-          ),
-          ContentScrollInteres(
-            imageHeight: 220.0,
-            imageWidth: 320.0,
-          ),
-          BannerJugando(
-            imageHeight: 450,
-            imageWidth: MediaQuery.of(context).size.width,
-          ),
-          ContentScrollJugando(
-            imageHeight: 220.0,
-            imageWidth: 320.0,
-          )
-        ]),
+                image: AssetImage("images/WALL.jpg"),
+                fit: BoxFit.cover,
+                colorFilter: ColorFilter.linearToSrgbGamma())),
+        child: Stack(
+          children: [
+            Container(
+              color: Colors.white38,
+            ),
+            ListView(children: [
+              BannerPage(
+                imageHeight: 450,
+                imageWidth: MediaQuery.of(context).size.width,
+              ),
+              ContentScrollEje(
+                imageHeight: 220.0,
+                imageWidth: 320.0,
+              ),
+              BannerInteres(
+                imageHeight: 450,
+                imageWidth: MediaQuery.of(context).size.width,
+              ),
+              ContentScrollInteres(
+                imageHeight: 220.0,
+                imageWidth: 320.0,
+              ),
+              BannerJugando(
+                imageHeight: 450,
+                imageWidth: MediaQuery.of(context).size.width,
+              ),
+              ContentScrollJugando(
+                imageHeight: 220.0,
+                imageWidth: 320.0,
+              )
+            ]),
+          ],
+        ),
       ),
     );
   }

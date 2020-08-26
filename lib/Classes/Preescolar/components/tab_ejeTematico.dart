@@ -1,44 +1,30 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import 'ContentScrollInteres.dart';
 import 'ContentScrollJugando.dart';
+import 'content_scrollRelacionados.dart';
 
-class TabDescriptionWidget extends StatefulWidget {
+class TabEjeWidget extends StatefulWidget {
+  final String id;
   final String title;
   final String description;
+  final String subtitle;
 
-  TabDescriptionWidget({Key key, this.title, this.description});
+  //CardsPrincipal cards;
+
+  TabEjeWidget({Key key, this.title, this.description, this.subtitle, this.id});
 
   @override
-  _TabDescriptionWidgetState createState() => _TabDescriptionWidgetState();
+  _TabEjeWidgetState createState() => _TabEjeWidgetState();
 }
 
-class _TabDescriptionWidgetState extends State<TabDescriptionWidget> {
+class _TabEjeWidgetState extends State<TabEjeWidget> {
   @override
   Widget build(BuildContext context) {
     return ListView(
       padding: EdgeInsets.only(top: 20, right: 10),
       children: [
-        Padding(
-          padding: const EdgeInsets.only(left: 10),
-          child: RaisedButton(
-            onPressed: () {
-              print("play video");
-              launch(
-                  "https://firebasestorage.googleapis.com/v0/b/mansamusa-339c9.appspot.com/o/videoplayback.mp4?alt=media&token=5e2e4db5-17a8-480c-8753-6b1de98725b9");
-            },
-            child: Text(
-              "Reproducir video",
-              style: TextStyle(fontSize: 18, color: Colors.white),
-            ),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8.0),
-            ),
-            color: Colors.deepOrangeAccent,
-          ),
-        ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
@@ -48,8 +34,8 @@ class _TabDescriptionWidgetState extends State<TabDescriptionWidget> {
                 widget.title,
                 style: TextStyle(fontSize: 30, color: Colors.white),
                 maxFontSize: 30,
-                minFontSize: 20,
                 maxLines: 2,
+                minFontSize: 15,
               ),
             ),
             SizedBox(
@@ -57,8 +43,9 @@ class _TabDescriptionWidgetState extends State<TabDescriptionWidget> {
             ),
             Expanded(
                 child: Container(
-                    height: 1.5,
-                    decoration: BoxDecoration(color: Colors.white)))
+              height: 1.5,
+              decoration: BoxDecoration(color: Colors.white),
+            ))
           ],
         ),
         SizedBox(
@@ -77,6 +64,15 @@ class _TabDescriptionWidgetState extends State<TabDescriptionWidget> {
         ),
         SizedBox(
           height: 10,
+        ),
+        ContentScrollRelacionTematico(
+          //images: temasInteresList,
+          id: widget.id,
+          title: widget.subtitle,
+          imageHeight: 140.0,
+          imageWidth: 183.0,
+          padding: 10,
+          paddingContainer: 0,
         ),
         ContentScrollInteres(
           imageHeight: 220.0,
